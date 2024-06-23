@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body{
+background-color:rgb(35, 31, 32);
+margin: 0px;
+padding: 0px;
+overflow-x: hidden;
+}
+
+#Title
+{
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    font-family: "Tilt Neon";
+    font-weight: bold;
+    width: 100%;
+    top: 0px;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 3);
+}
+#Title label
+{
+    margin-left: 50px;
+    padding: 10px;
+    font-size: 32px;
+    user-select: none;
+}
+#back 
+{
+    
+    position: fixed;
+    top: 0px;
+    left:0px;
+    margin: 0px;
+    margin-right:10px;
+    background-color: transparent;
+    padding: 10px !important;
+    border: none;
+    outline: none;
+}
+#icon{
+
+    object-fit: cover;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    outline: none;
+}
+#back:hover #icon {
+transform: scale(1.7);
+filter: invert(100%);
+}
+#back:active #icon {
+    transform: scale(1);
+    filter: invert(0%);  
+}
+#utils{
+    position: fixed;
+    height: 64px;
+    width: 100%;
+    bottom: 0px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 3);
+}
+#msgBox{
+    margin: 10px;
+    margin-left: 30px;
+    margin-right: 0px;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    border: 0px solid rgb(35, 31, 32);
+    background-color:rgb(35, 31, 32);
+    font-family: "Nunito Sans";
+    font-weight:300;
+    font-size: 16px;
+    color: white;
+    height: 41px;
+    resize: none;
+      overflow: hidden;
+    transition: border-color 0.3s ease, border-width 0.1s ease-out, transform 0.3s ease, padding-top 0.3s ease;
+}
+#msgBox:focus{
+    outline: none;
+    border-color: white;
+    border-width: 3px;
+    transform: scaleY(1.073117073);
+    padding-top: 7.5px;
+}
+#send{
+    -webkit-tap-highlight-color: transparent;
+    margin: 10px;
+    margin-top: 7px;
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+#icon2{
+   
+    width: 42px;
+    height: 42px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    outline: none;
+}
+#Send:hover #icon2 {
+    transform: scale(1.2);
+    opacity: 70%;
+}
+#Send:active #icon2 {
+    transform: scale(1);
+    opacity: 100%;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgb(35, 31, 32);
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 0;
+    transition: padding-left 0.3s ease;
+}
+
+#container::-webkit-scrollbar {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 3);
+    width: 14px;
+    background: black;
+    border-radius: 0px;
+}
+
+#container::-webkit-scrollbar-thumb {    
+    background-color: rgb(35, 31, 32);
+    min-height: 30px;
+    border-radius: 7px;
+}
+
+#container::-webkit-scrollbar-thumb:hover {    
+    background-color: silver;
+}
+
+#container::-webkit-scrollbar-thumb:active {    
+    background-color: white;
+}
+
+#container::-webkit-scrollbar-track {
+    background: black;
+}
+
+#container::-webkit-scrollbar-track:hover {
+    background: white;
+}
+
+#container::-webkit-scrollbar-track:active {
+    background: silver;
+}
+.userMsg {
+    align-self: flex-end;
+    max-width: 70%;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 10px;
+    font-family: "Nunito Sans";
+    background-color: blueviolet;
+    color: white;
+    border-top-right-radius: 0px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    margin:10px;
+    margin-right: 20px;
+   
+}
+.staffMsg {
+    align-self: flex-start;
+    max-width: 70%;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 10px;
+    font-family: "Nunito Sans";
+    background-color: #fbc652;
+    color: white;
+    border-top-left-radius: 0px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    margin:10px;
+    margin-left: 10px;   
+}
+#nav
+{
+    position: absolute;
+    left: -180px;
+    background-color: black;
+    z-index: 1;
+    width: 210px;
+    border: none;
+    transition: left 0.3s ease;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 3);
+}
+#grabber{
+    position: absolute;
+    left: 180;
+    width: 30px;
+    border: none;
+    background-color: inherit;
+    overflow: hidden;
+}
+#icon3{
+    position: absolute;
+    left: 1;
+    width: 32px;
+    height: 39px;
+    transition: transform 0.6s ease, filter 0.3s ease, left 0.3s ease;
+    outline: none;
+    
+}
+#nav:hover #icon3{
+    transform: scale(1.9) rotate(180deg) translateX(-20px);
+    filter: invert(100%);
+    left: -2;
+}
+#nav:hover{
+    left:0;
+}
+#navHead {
+    top:0;
+    font-family: "Tilt Neon";
+    font-weight: bold;
+    position: absolute;
+    background-color: black;
+    color: white;
+    display: block;
+    width: 190px;
+    text-align: center;
+}
+#historyContainer{
+    position: absolute;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+}
+.loader{
+    align-self: flex-start;
+    display:flex;
+    flex-direction: row;
+    background-color: #fbc652;
+    width: 80px;
+    height: 40px;
+    margin-left: 5px;
+    border-radius: 15px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.dot{
+    position: relative;
+    margin: 4%;
+    background-color: white;
+    width: 15%;
+    border-radius: 100%;
+    height: 35%;
+    
+}
+#Animation1{
+    animation: animateOpacityScale 0.3s infinite alternate; 
+      
+}
+#Animation2{
+    
+    animation: animateOpacityScale 0.4s infinite alternate;
+}
+#Animation3{
+    animation: animateOpacityScale 0.5s infinite alternate;
+}
+@keyframes animateOpacityScale {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+#historyContainer{
+    display: flex;
+    flex-direction: column;
+}
+.chat{
+    position: relative;
+    background-color: black;
+    font-family: "Nunito Sans";
+    font-weight:300;
+    font-size: 16px;
+    color: white;
+    width: 87%;
+    height: 28px;
+    margin: 2%;
+    margin-top: 10%;
+    margin-left: 11%;
+    border-radius: 7px;
+    text-align: center;
+    padding-top: 5px;
+}
+.chat:hover{
+    background-color:#646464;
+}

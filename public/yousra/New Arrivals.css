@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1c1c1c;
+    z-index: 1000; /* Ensure the header is above other elements */
+  }
+  
+  body {
+    padding-top: 190px; /* Adjust this to match the header height */
+  }
+  
+.strap {
+    background-color: #e57aaf; /* Pink color */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    animation: moveStrap 5s infinite; 
+}
+@keyframes moveStrap {
+    0% {
+        transform: scaleX(0); 
+    }
+    50% {
+        transform: scaleX(1); 
+    }
+    100% {
+        transform: scaleX(0); 
+    }
+}
+.logo {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: whitesmoke;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Style for icons */
+.logo a {
+    position: absolute; 
+    text-align: center;
+    font-size: 23px; /* icon size */
+ }
+.logo a:nth-child(1) {
+   right: 170px; 
+   font-size: 23px;
+   color: #ffffff;
+}
+.logo a:nth-child(2) {
+   right: 130px; 
+   color: #ffffff;
+   font-size: 20px;
+}
+.logo a:nth-child(3) {
+   right: 90px;
+   color: #ffffff;
+   font-size: 20px;
+}
+.logo a:nth-child(4) {
+   right: 50px; 
+   color: #ffffff;
+   font-size: 20px;
+}
+.search-bar {
+    position: absolute;
+    border-radius: 50px;
+    top: calc(40% + 10px); /* Adjust the distance from the search icon */
+    left: 1100px;
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+    z-index: 2;
+ }
+ .search-bar input {
+    width: 200px;
+    height: 15px;
+    border-radius: 50px;
+    padding: 10px;
+ }
+ .search-bar button {
+    padding: 5px 10px;
+    border-radius: 50px;
+ }
+ .cart-panel {
+    text-align: center;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    border-radius: 40px;
+    top: calc(40% + 10px); /* Adjust the distance from the search icon */
+    left: 1000px;
+    background-color: #fff;
+    padding: 10px;
+    display: none;
+    z-index: 2;
+ }
+ .cart-panel img {
+    padding-top: 50px;
+    padding-left: 100px;
+    width: 300px;
+    height: 200px;
+    border-radius: 40px;
+    display:block;
+ }
+ .cart-panel button {
+   
+    display: inline;
+    margin-top: 40px;
+    border-radius: 40px;
+ } 
+
+
+
+ .navigation {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none; 
+}
+.navigation a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 0 15px;
+    margin-left: 55px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: rgb(233, 185, 39);
+}
+
+
+.filter-section {
+    position: fixed; /* Fix the filter section in place */
+    top: 190px;      /* Position below the header */
+    left: 20px;      /* Distance from the left edge */
+    width: 200px;    /* Adjust the width as needed */
+    padding: 15px;
+    z-index: 900;    /* Z-index to keep it above content but below the header */
+}
+
+.filter-section, .in-stock, .price-section {
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: calc(33.333% - 10px);
+    display: inline-block;
+    vertical-align: top;
+}
+.filter h2, .in-stock h2, .price-section h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 50px; /* Add margin to the left */
+}
+.filter hr, .in-stock hr, .price-section hr {
+    border-top: 1px solid #ddd;
+    margin: 10px auto;
+    width: 80%;
+}
+.filter h2 span,
+.in-stock h2 span,
+.price-section h2 span {
+    padding-bottom: 5px;
+}
+.in-stock, .price-section {
+    width: 100%;
+    display: block;
+    padding: 0;
+    border-radius: 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    left: 380px;
+    bottom: 30px;
+  }
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+    .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  /* When the switch is checked, change the background color */
+  .switch input:checked + .slider {
+    background-color: #2196F3;
+  }
+  /* Move the slider when the switch is checked */
+  .switch input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 20px;
+  } 
+  .slider.round:before {
+    border-radius: 50%;
+  }
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 10px; /* Spacing between cards */
+    padding: 20px;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start; /* Align items to the top */
+    margin-left: 500px; /* Shift the entire grid to the right */
+}
+.product-card {
+    width: 100%; /* Full width of the grid column */
+    border-radius: 10px; /* Uniform border-radius for all cards */
+    text-align: center;
+    padding: 15px; /* Padding inside the card */
+    background-color: white;
+    overflow: hidden; /* Ensures content stays within card boundaries */
+}
+.product-card {
+    position: relative; /* Needed for absolute positioning of hover image */
+}
+.product-card a {
+    text-decoration: none; /* Prevent underlining in product card links */
+    color: inherit;        /* Keep the text color same as the surrounding text */
+}
+.product-card a:hover {
+    text-decoration: none; /* No underline on hover */
+}
+
+.product-card button {
+    text-decoration: none; /* Ensures the button text isn't underlined */
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.product-card button:hover {
+    background-color: black;
+    color: white;
+}
+.product-card .default-img,
+.product-card .hover-img {
+    width: 100%; /* Ensure images occupy full width of card */
+    height: auto;
+}
+.product-card .hover-img {
+    position: absolute; /* Position hover image over default image */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition for hover effect */
+}
+.product-card:hover .default-img {
+    opacity: 0; /* Hide default image on hover */
+}
+.product-card:hover .hover-img {
+    opacity: 1; /* Show hover image on hover */
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card-body {
+    padding: 25px;
+    font-size: small;
+}
+.card-body h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.card-body p {
+    margin-bottom: 10px;
+}
+.price {
+    text-align: left;
+}
+button {
+    background-color:white;
+    color:black;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: black;
+    color:white;
+}
+
+.pagination {
+    text-align: center;  /* Center-aligns the pagination controls */
+    padding: 20px 0;  /* Adds space around pagination */
+}
+
+.page-link {
+    text-decoration: none;  /* Removes underlines from links */
+    color: #000;  /* Sets the text color */
+    padding: 8px 12px;  /* Spacing for links */
+    margin: 0 5px;  /* Space between links */
+    border: 1px solid #ddd;  /* Border styling */
+    border-radius: 5px;  /* Rounds the corners */
+}
+
+.page-link:hover {
+    background-color: #f0f0f0;  /* Hover effect */
+}
+
+.next-page {
+    text-decoration: none;  /* Removes underlines from links */
+    color: #000;  /* Sets the text color */
+    padding: 8px 12px;  /* Spacing for links */
+    margin: 0 10px;  /* Space between links */
+    border: 1px solid #ddd;  /* Border styling */
+    border-radius: 5px;  /* Rounds the corners */
+}
+
+.next-page:hover {
+    background-color: #1c1c1c;  /* Hover effect */
+    color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #e2e3e5;
+    color: #264653;
+ }
+.link {
+    color: #264653;
+    text-decoration: none;
+    font-size:15px;
+}
+ input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+ }
+ button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #264653;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ 
+ /* neww */
+ .content {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.product-card .hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.product-card:hover .hover-img {
+    opacity: 1;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-body h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.card-body .price {
+    font-size: 1em;
+    color: #333;
+}
+
+.card-body button {
+    padding: 10px 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.card-body button:hover {
+    background: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+}

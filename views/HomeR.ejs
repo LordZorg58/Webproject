@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/MariamJan/Home.css">
+    <script src="/static/MariamJan/Home.js"></script>
+    <title>HOME</title>
+</head>
+<body>
+    
+    <!-- navbar -->
+    <div class="header">
+        <div class="logo">
+            WanderWalks
+            <a href="https://<%= domainName %>/"><i class="bi bi-person"></i></a>
+            <a href="#cart" class="cart-icon"><i class="bi bi-cart3"></i></a>
+            <a href="#search" class="search-icon"><i class="bi bi-search"></i></a>
+            <a href="https://<%= domainName %>/account"><i class="bi bi-gear"></i></a>
+        </div>
+       
+        <div class="cart-panel" id="cart-panel">
+             <!-- <div class="cart-content">
+                 <img src="cart.png" alt="Cart Image">
+                 <button>Continue Shopping</button> 
+                 <button id="close-cart">Close</button>
+             </div> -->
+     
+             <form>
+                 <h4>Shopping Cart</h4>
+                 <div class="productCard">
+                     <img id="cartitemimg" src="https://static.e-stradivarius.net/5/photos4/2024/V/0/1/p/1380/219/010/1380219010_1_1_1.jpg?t=1706631402878&impolicy=stradivarius-itxmediumhigh&imwidth=1920&imformat=chrome&imdensity=1.25" alt="Product Image" >
+                     <div class="productDetails"> 
+                         <div class="productInfo">
+                             <span class="productName">FORMAL BERMUDA SHORTS WITH FINE STRIPES</span><br>
+                             <span class="productPrice">890 L.E</span>
+                         </div>
+                         <div class="wrapper"> 
+                             <span class="minus">-</span>
+                             <span class="num">01</span>
+                             <span class="plus">+</span>
+                         </div>
+                     </div>
+                 </div>
+                 <button>Check-Out</button> 
+                 <button id="close-cart">Close</button>
+                 <script>
+                     document.addEventListener("DOMContentLoaded", initializeQuantity);
+                 </script>
+             </form>
+         </div>
+        <!-- <div class="search-bar" id="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+            <button id="close-search">Close</button>
+        </div> -->
+        <div class="search-bar" id="search-bar">
+            <input type="text" placeholder="Search...">
+            <button onclick="return validateSearch()">Search</button>
+            <button id="close-search">Close</button>
+        </div>
+    
+        <div class="menu">
+            <a href="https://<%= domainName %>/Home">HOME</a>
+            <a href="https://<%= domainName %>/shop">NEW ARRIVALS</a>
+            <a href="https://<%= domainName %>/shop">SHOP </a>
+            <a href="https://<%= domainName %>/about">ABOUT</a>
+        </div>
+  </div>
+
+  
+
+<!-- 5th main -->
+
+  <div class="main5">
+   <h1>Refund Policy</h1>
+    <p>
+        Welcome to WanderWalks! Our Refund Policy outlines the terms and conditions for refunds on purchases made through our Services.
+        <br>1. Eligibility<br>
+        You may be eligible for a refund if you meet the following criteria:
+        You have purchased a product through our Services.
+        You request a refund within the applicable refund period.
+        The product is returned in its original condition, unused, and with all tags attached.
+        <br>2. Refund Period<br>
+        The refund period varies depending on the type of product purchased and any applicable laws or regulations. Please refer to the specific product page or contact our customer support for information on the refund period applicable to your purchase.
+        <br>3. Refund Process<br>
+        If your refund is approved, it will be processed within a reasonable timeframe and credited back to the original payment method used for the purchase. Please note that it may take some time for the refund to be reflected in your account, depending on your financial institution.
+    </p>
+  </div>
+  
+  
+<!-- footer -->
+<div class="footer">
+    <div>
+        <h1>Sign up for new stories<br> and personal offers</h1>
+        <form>
+            <input type="email" placeholder="E-mail">
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+    <div>
+        <h2 style="font-style: bold;">About</h2>
+        <p>Created with your comfort and style in mind,<br> BOU is here to bring the trendiest styles,<br> colors, and even prints right<br> to your doorstep!</p>
+    </div>
+    <div>
+        <h2 style="font-style: bold;">Quick Links</h2>
+        <ul>
+            <li><a href="https://<%= domainName %>/HomeP">Privacy Policy</a></li>
+            <li><a href="https://<%= domainName %>/HomeT">Terms of Service</a></li>
+            <li><a href="https://<%= domainName %>/HomeR">Refund & Exchange Policy</a></li>
+        </ul>
+    </div>
+   </div>
+</body>
+</html>

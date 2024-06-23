@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/MariamJan/Admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar">
+        <h2>Wonderwalks</h2>
+        <ul>
+            <li><a href="https://<%= domainName %>/Home">Home Page</a></li>
+            <li><a href="https://<%= domainName %>/AdminU">User Management</a></li>
+            <li><a href="https://<%= domainName %>/AdminOrder">Order Management</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1>Product Management</h1>
+        <form action="/updateProduct/<%=obj._id%>?_method=PUT" method="post">
+            <div class="form-group">
+                <label for="product-name">Product Name</label>
+                <input value="<%= obj.name %>" type="text" id="product-name" name="name" required minlength="3" maxlength="100" placeholder="Product name">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" value="<%= obj.description %>" id="description" name="description" required minlength="20" placeholder="Product description"></input>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="jackets" <%= obj.category === 'jackets' ? 'selected' : '' %>>Jackets</option>
+                    <option value="tshirts" <%= obj.category === 'tshirts' ? 'selected' : '' %>>T-Shirts</option>
+                    <option value="pants" <%= obj.category === 'pants' ? 'selected' : '' %>>Pants</option>
+                    <option value="shoes" <%= obj.category === 'shoes' ? 'selected' : '' %>>Shoes</option>
+                    <option value="clogs" <%= obj.category === 'clogs' ? 'selected' : '' %>>Clogs</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input value="<%= obj.price %>" type="number"  id="price" name="price" required min="0" max="200000000000" placeholder="Product price">
+            </div>
+            <div class="form-group">
+                <label for="discount">Price after Discount</label>
+                <input value="<%= obj.priceAfterDiscount %>" type="number" id="discount" name="priceAfterDiscount" min="0" placeholder="Price after discount">
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock Quantity</label>
+                <input value="<%= obj.quantity %>" type="number" id="stock" name="quantity" required min="0" placeholder="Quantity">
+            </div>
+            <div class="form-group">
+                <label for="images">Product Images</label>
+                <input value="<%= obj.images %>" type="file" id="images" name="images" multiple>
+            </div>
+            <div class="form-group">
+                <label for="colors">Color Options</label>
+                <input value="<%= obj.colors %>" type="text" id="colors" name="colors" placeholder="Color">
+            </div>
+            <div class="form-group">
+                <label for="ratingsAverage">Average Rating</label>
+                <input value="<%= obj.ratingsAverage %>" type="number" id="ratingsAverage" name="ratingsAverage" min="1" max="5" placeholder="Enter average rating">
+            </div>
+            <div class="form-group">
+                <label for="sizes">Size Options</label>
+                <div class="checkboxes">
+                    <input value="<%= obj.size %>" type="text" id="ratingsAverage" name="size" >
+                    <label><input value="S" <%= (obj.sizes && obj.sizes.includes('S')) ? 'checked' : '' %> type="checkbox" name="size"> S</label>
+                    <label><input value="M" <%= (obj.sizes && obj.sizes.includes('M')) ? 'checked' : '' %> type="checkbox" name="size"> M</label>
+                    <label><input value="L" <%= (obj.sizes && obj.sizes.includes('L')) ? 'checked' : '' %> type="checkbox" name="size"> L</label>
+                    <label><input value="XL" <%= (obj.sizes && obj.sizes.includes('XL')) ? 'checked' : '' %> type="checkbox" name="size"> XL</label>
+                </div>
+            </div>
+            
+            <button class="button" type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/MariamJan/Admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar">
+        <h2>Wonderwalks</h2>
+        <ul>
+            <li><a href="https://<%= domainName %>/Home">Home Page</a></li>
+            <li><a href="https://<%= domainName %>/Admin">Product Management</a></li>
+            <li><a href="https://<%= domainName %>/AdminOrder">Order Management</a></li>
+        </ul>
+    </div>
+    
+    <div class="main">
+        <h1>User Management</h1>
+        <form action="/updateUser/<%=obj._id%>?_method=PUT" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input  value="<%= obj.username %>" type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input  value="<%= obj.email %>" type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input  value="<%= obj.phoneNumber %>" type="text" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="Female" <%= obj.category === 'Female' ? 'selected' : '' %>>Female</option>
+                    <option value="Male" <%= obj.category === 'Male' ? 'selected' : '' %>>Male</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input value="<%= obj.password %>" type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input value="<%= obj.address.city %>" type="text" id="city" name="address.city" required>
+            </div>
+            <div class="form-group">
+                <label for="street">Street</label>
+                <input value="<%= obj.address.street %>" type="text" id="street" name="address.street" required>
+            </div>
+            <button class="button" type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>

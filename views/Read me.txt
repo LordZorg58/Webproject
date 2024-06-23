@@ -1,0 +1,7 @@
+.ejs files go here dynamic html files
+
+include script :
+<script src="/static/file.js" defer></script>
+
+include css files :
+<link rel="stylesheet" href="/static/file.css">

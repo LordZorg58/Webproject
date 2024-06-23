@@ -1,0 +1,2 @@
+website icon is here named images.ico (rename your icon always to that name to work)
+js and css files goes here as well

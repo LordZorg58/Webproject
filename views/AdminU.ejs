@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/MariamJan/Admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar">
+        <h2>Wonderwalks</h2>
+        <ul>
+            <li><a href="https://<%= domainName %>/Home">Home Page</a></li>
+            <li><a href="https://<%= domainName %>/Admin">Product Management</a></li>
+            <li><a href="https://<%= domainName %>/AdminOrder">Order Management</a></li>
+        </ul>
+    </div>
+    
+    <div class="main">
+        <h1>User Management</h1>
+        <form action="/Web-Project-Final/Web-Project-main/server/views/AdminU.ejs" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="address.city" required>
+            </div>
+            <div class="form-group">
+                <label for="street">Street</label>
+                <input type="text" id="street" name="address.street" required>
+            </div>
+            <button class="button" type="submit">Save</button>
+        </form>
+<!--         
+        <h2>User List</h2>
+        <form action="/search" method="post">
+        <div class="search-bar">
+            <input type="text" placeholder="Search users">
+        </div>
+        </form> -->
+        <table class="product-list">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>Street</th>
+                    <th>Last Update</th>
+                    <th>Actions</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <!-- for each loop 3ashn al obj -->
+                <% arr.forEach(item => { %>
+                    <tr>
+                        <td><%= item.username %></td>
+                        <td><%= item.email %></td>
+                        <td><%= item.phoneNumber %></td>
+                        <td><%= item.gender %></td>
+                        <td><%= item.address.city %></td>
+                        <td><%= item.address.street %></td>
+                        <td><%= moment(item.updatedAt).format("MMM Do YY"); %></td>
+                        <td>
+                            <a href="https://<%= domainName %>/AdminUedit/<%= item._id %>"><button class="button">Edit</button></a>
+                        <form style="display: inline;" action="/delete<%= item._id %>?_method=DELETE" method="post"  >
+                            <button type="submit" class="button">Delete</button>
+                        </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

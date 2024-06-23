@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/MariamJan/Home.css">
+    <script src="/static/MariamJan/Home.js"></script>
+    <title>HOME</title>
+</head>
+<body>
+    
+    <!-- navbar -->
+   <div class="header">
+    <div class="logo">
+        WanderWalks
+        <a href="https://<%= domainName %>/"><i class="bi bi-person"></i></a>
+        <a href="#cart" class="cart-icon"><i class="bi bi-cart3"></i></a>
+        <a href="#search" class="search-icon"><i class="bi bi-search"></i></a>
+        <a href="https://<%= domainName %>/account"><i class="bi bi-gear"></i></a>
+    </div>
+   
+    <div class="cart-panel" id="cart-panel">
+         <!-- <div class="cart-content">
+             <img src="cart.png" alt="Cart Image">
+             <button>Continue Shopping</button> 
+             <button id="close-cart">Close</button>
+         </div> -->
+ 
+         <form>
+             <h4>Shopping Cart</h4>
+             <div class="productCard">
+                 <img id="cartitemimg" src="https://static.e-stradivarius.net/5/photos4/2024/V/0/1/p/1380/219/010/1380219010_1_1_1.jpg?t=1706631402878&impolicy=stradivarius-itxmediumhigh&imwidth=1920&imformat=chrome&imdensity=1.25" alt="Product Image" >
+                 <div class="productDetails"> 
+                     <div class="productInfo">
+                         <span class="productName">FORMAL BERMUDA SHORTS WITH FINE STRIPES</span><br>
+                         <span class="productPrice">890 L.E</span>
+                     </div>
+                     <div class="wrapper"> 
+                         <span class="minus">-</span>
+                         <span class="num">01</span>
+                         <span class="plus">+</span>
+                     </div>
+                 </div>
+             </div>
+             <button>Check-Out</button> 
+             <button id="close-cart">Close</button>
+             <script>
+                 document.addEventListener("DOMContentLoaded", initializeQuantity);
+             </script>
+         </form>
+     </div>
+    <!-- <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+        <button id="close-search">Close</button>
+    </div> -->
+    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+        <button onclick="return validateSearch()">Search</button>
+        <button id="close-search">Close</button>
+    </div>
+
+
+
+    <div class="menu">
+        <a href="https://<%= domainName %>/Home">HOME</a>
+        <a href="https://<%= domainName %>/Newarrivals">NEW ARRIVALS</a>
+        <div class="dropdown">
+            <a href="https://<%= domainName %>/shop">SHOP <i class="fa-solid fa-angle-down"></i></a>
+            <div class="dropdown-content">
+                <a href="https://<%= domainName %>/SummerSlippers">T-SHIRTS</a>
+                <a href="https://<%= domainName %>/sandals">JACKETS</a>
+                <a href="https://<%= domainName %>/shoes">PANTS</a>
+                <a href="https://<%= domainName %>/mules">SHORTS</a>
+                <a href="https://<%= domainName %>/clogs">SETS</a>
+                <a href="https://<%= domainName %>/flats">FOOTWEAR</a>
+            </div>
+        </div>
+        <a href="https://<%= domainName %>/About">ABOUT</a>
+    </div>
+  </div>
+
+  
+
+<!-- 5th main -->
+
+  <div class="main5">
+   <h1>About Us ?</h1>
+   <p>We are Wander Walks, and we're more than threads and fabrics – we're a local movement woven from the shared love of exploration and the quiet awe found in every footstep. We believe every trek, every detour, every curious meander shapes who we are. From navigating the labyrinthine streets of our city to getting lost in a captivating book, the spirit of exploration fuels our creativity and broadens our horizons.<br><br>
+
+    This philosophy isn't just a motto; it's the very essence of Wander Walks. Our clothing isn't about fleeting trends – it's designed to be your trusted partner on every odyssey. We translate life's dynamic journeys into unique, geometric designs, reflecting the ever-changing landscapes we encounter – both the physical terrains and the metaphorical ones within ourselves. Each piece is meticulously crafted with comfort and movement in mind, utilizing high-quality, ethically sourced materials. Because for us, comfort isn't an afterthought – it's the foundation that allows you to fully immerse yourself in every experience, big or small.<br><br>
+    
+    But Wander Walks goes beyond aesthetics and functionality. We're deeply committed to leaving a positive footprint on the world we explore with such passion. Sustainable practices and ethical sourcing are the cornerstones of our brand. We work hand-in-hand with our partners to ensure minimal environmental impact throughout our supply chain, so you can feel good about the clothes you wear and the journeys you take.<br><br>
+    <i class="bi bi-instagram"></i>
+    <i class="bi bi-facebook"></i>
+    <i class="bi bi-twitter"></i>
+    </p>
+    
+  </div>
+  
+  
+<!-- footer -->
+<div class="footer">
+    <div>
+        <h1>Sign up for new stories<br> and personal offers</h1>
+        <form>
+            <input type="email" placeholder="E-mail">
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+    <div>
+        <h2 style="font-style: bold;">About</h2>
+        <p>Created with your comfort and style in mind,<br> BOU is here to bring the trendiest styles,<br> colors, and even prints right<br> to your doorstep!</p>
+    </div>
+    <div>
+        <h2 style="font-style: bold;">Quick Links</h2>
+        <ul>
+            <li><a href="https://<%= domainName %>/HomeP">Privacy Policy</a></li>
+            <li><a href="https://<%= domainName %>/HomeT">Terms of Service</a></li>
+            <li><a href="https://<%= domainName %>/HomeR">Refund & Exchange Policy</a></li>
+        </ul>
+    </div>
+   </div>
+</body>
+</html>

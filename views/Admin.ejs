@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/MariamJan/Admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar">
+        <h2>Wonderwalks</h2>
+        <ul>
+            <li><a href="https://<%= domainName %>/Home">Home Page</a></li>
+            <li><a href="https://<%= domainName %>/AdminU">User Management</a></li>
+            <li><a href="https://<%= domainName %>/AdminOrder">Order Management</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1>Product Management</h1>
+        <form action="/Web-Project-Final/Web-Project-main/server/views/Admin.ejs" method="post">
+            <div class="form-group">
+                <label for="product-name">Product Name</label>
+                <input type="text" id="product-name" name="name" required minlength="3" maxlength="100" placeholder="Product name">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" required minlength="20" placeholder="Product description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="jackets">Jackets</option>
+                    <option value="tshirts">T-Shirts</option>
+                    <option value="pants">Pants</option>
+                    <option value="shoes">Shoes</option>
+                    <option value="clogs">Clogs</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" required min="0" max="200000" placeholder="Product price">
+            </div>
+            <div class="form-group">
+                <label for="discount">Price after Discount</label>
+                <input type="number" id="discount" name="priceAfterDiscount" min="0" placeholder="Price after discount">
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock Quantity</label>
+                <input type="number" id="stock" name="quantity" required min="0" placeholder="Quantity">
+            </div>
+            <div class="form-group">
+                <label for="images">Product Images</label>
+                <input type="file" id="images" name="images[]" multiple>
+            </div>
+            <div class="form-group">
+                <label for="colors">Color Options</label>
+                <input type="text" id="colors" name="colors" placeholder="Color">
+            </div>
+            <div class="form-group">
+                <label for="ratingsAverage">Average Rating</label>
+                <input type="number" id="ratingsAverage" name="ratingsAverage" min="1" max="5" placeholder="Enter average rating">
+            </div>
+            <div class="form-group">
+                <label for="sizes">Size Options</label>
+                <div class="checkboxes">
+                    <label><input type="checkbox" name="size" value="S"> S</label>
+                    <label><input type="checkbox" name="size" value="M"> M</label>
+                    <label><input type="checkbox" name="size" value="L"> L</label>
+                    <label><input type="checkbox" name="size" value="XL"> XL</label>
+                </div>
+            </div>
+            <button class="button" type="submit">Save</button>
+        </form>
+    
+        <!-- <h2>Product List</h2>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products">
+        </div> -->
+        <table class="product-list">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Price after Discount</th>
+                    <th>Stock</th>
+                    <th>Colors</th>
+                    <th>Average Rating</th>
+                    <th>Last Update</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+           
+
+            <tbody>
+                <!-- for each loop 3ashn al obj -->
+                <% arr.forEach(item => { %>
+                    <tr>
+                        <td><%= item.name %></td>
+                        <td><%= item.category %></td>
+                        <td><%= item.price %></td>
+                        <td><%= item.priceAfterDiscount %></td>
+                        <td><%= item.quantity %></td>
+                        <td><%= item.colors %></td>
+                        <td><%= item.ratingsAverage %></td>
+                        <td><%= moment(item.updatedAt).format("MMM Do YY"); %></td>
+                        <td>
+                            <a href="https://<%= domainName %>/Adminedit/<%= item._id %>"><button class="button">Edit</button></a>
+                            <form style="display: inline;" action="/deletee/<%= item._id %>?_method=DELETE" method="post"  >
+                                <button type="submit" class="button">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+
+
+           
+        </table>
+    </div>
+</body>
+</html>

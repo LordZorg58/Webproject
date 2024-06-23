@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="/static/Mostafa/acc.css"> <!-- Link to external CSS file -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Account Settings</h2>
+        
+        <!-- Customer Information Section -->
+        <div class="section section-with-margin">
+            <h3>Customer Information</h3>
+            <div class="section-content">
+                <p>Username: Mostafa</p>
+                <p>Customer ID: 123456</p>
+                <p>Address: New Cairo, Narges 6, Villa 1</p>
+            </div>
+        </div>
+        
+        <!-- Order History Section -->
+        <div class="section section-with-margin">
+            <h3>Order History</h3>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Date</th>
+                            <th>Payment Status</th>
+                            <th>Fulfillment Status</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12345</td>
+                            <td>2024-04-20</td>
+                            <td>Paid</td>
+                            <td>Shipped</td>
+                            <td>$100.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Change Address Section -->
+        <div class="section section-with-margin">
+            <h3>Change Address</h3>
+            <div class="section-content">
+                <p>To change your address, click the button below:</p>
+                <form action="https://<%= domainName %>/change_address">
+                    <button type="submit">Change Address</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Change Username Section -->
+        <div class="section section-with-margin">
+            <h3>Change Username</h3>
+            <div class="section-content">
+                <form action="change_username.php" method="post" onsubmit="return showSuccessMessage('username', 'Username has changed successfully.')">
+                    <div class="form-group">
+                        <label for="new-username">New Username:</label>
+                        <input type="text" id="new-username" name="new-username" required>
+                    </div>
+                    <button type="submit">Change Username</button>
+                </form>
+                <div id="username-success-message" style="display: none; color: green;">Username has changed successfully.</div>
+            </div>
+        </div>
+        
+        <!-- Change Password Section -->
+        <div class="section section-with-margin">
+            <h3>Change Password</h3>
+            <div class="section-content">
+                <form action="change_password.php" method="post" onsubmit="return showSuccessMessage('password', 'Password has changed successfully.')">
+                    <div class="form-group">
+                        <label for="current-password">Current Password:</label>
+                        <input type="password" id="current-password" name="current-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password:</label>
+                        <input type="password" id="new-password" name="new-password" required>
+                    </div>
+                    <button type="submit">Change Password</button>
+                </form>
+                <div id="password-success-message" style="display: none; color: green;">Password has changed successfully.</div>
+            </div>
+        </div>
+        
+        <!-- Change Payment Method Section -->
+        <div class="section section-with-margin">
+            <h3>Change Payment Method</h3>
+            <div class="section-content">
+                <form action="change_payment_method.php" method="post" onsubmit="return showSuccessMessage('payment-method', 'Payment method has been changed successfully.')">
+                    <div class="form-group">
+                        <label for="payment-method">Select Payment Method:</label>
+                        <select id="payment-method" name="payment-method" required>
+                            <option value="credit-card">Credit Card</option>
+                            <option value="paypal">Cash</option>
+                            <option value="bank-transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <button type="submit">Change Payment Method</button>
+                </form>
+                <div id="payment-method-success-message" style="display: none; color: green;">Payment method has been changed successfully.</div>
+            </div>
+        </div>
+        <a href="https://<%= domainName %>/CustomerService">Customer Support</a>
+    </div>
+
+    <script src="/static/Mostafa/script.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>

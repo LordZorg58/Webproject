@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body{
+background-color:rgb(35, 31, 32);
+margin: 0px;
+padding: 0px;
+overflow-x: hidden;
+}
+
+#Title
+{
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    font-family: "Tilt Neon";
+    font-weight: bold;
+    width: 100%;
+    top: 0px;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 3);
+}
+#Title label
+{
+    margin-left: 50px;
+    padding: 10px;
+    font-size: 32px;
+    user-select: none;
+}
+#back 
+{
+    
+    position: fixed;
+    top: 0px;
+    left:0px;
+    margin: 0px;
+    margin-right:10px;
+    background-color: transparent;
+    padding: 10px !important;
+    border: none;
+    outline: none;
+}
+#icon{
+
+    object-fit: cover;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    outline: none;
+}
+#back:hover #icon {
+transform: scale(1.7);
+filter: invert(100%);
+}
+#back:active #icon {
+    transform: scale(1);
+    filter: invert(0%);  
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: 8.5%;
+    margin-top: 120px;
+    background-color: rgb(35, 31, 32);
+    width: 85%;
+    height: 75%;
+    border: solid 3px white;
+    border-radius: 10px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 3);
+    transition: padding-left 0.3s ease;
+}
+
+#container2::-webkit-scrollbar {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 3);
+    width: 14px;
+    background: black;
+    border-radius: 0px;
+    margin-right: 10px;
+}
+
+#container2::-webkit-scrollbar-thumb {    
+    background-color: rgb(35, 31, 32);
+    min-height: 30px;
+    border-radius: 7px;
+}
+
+
+
+#container2::-webkit-scrollbar-track {
+    background: black;
+}
+
+
+
+#header2{
+    font-family: "Roboto";
+    font-weight: normal;
+    text-align: center;
+    font-style: normal;
+    color: white; 
+    background-color: black;
+    padding: 10px;
+    font-size: 26px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 3);
+}
+.orderCard{
+    display: block;
+    padding: 10px;
+    color: white;
+    border: solid 3px white;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    font-family: "Nunito Sans";
+    width: 100%;
+}
+.orderCard .Left{
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+.orderCard .Right{
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+#container2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.OrderIdField{
+display:flex;
+flex-direction: row;
+}
+.CustomerField{
+    display:flex;
+    flex-direction: row;
+    }
+    .ProductslistField{
+        display:flex;
+        flex-direction: row;
+        }
+        .AddressField{
+            display:flex;
+            flex-direction: row;
+            }
+            .StatusField{
+                display:flex;
+                flex-direction: row;
+                }
+                .TotalField{
+                    display:flex;
+                    flex-direction: row;
+                    }
+.Edit{
+    border: solid 2px #fbc652;
+    border-radius: 10px;
+    width: 120px;
+    padding: 7px;
+    font-family: "Tilt Neon";
+    color: black;
+    font-weight: bold;
+    background-color: #fbc652;
+    opacity: 1;
+    margin: 10px;
+    margin-right: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.Delete{
+    border: solid 2px #C63EC2 ;
+    border-radius: 10px;
+    width: 120px;
+    padding: 7px;
+    font-family: "Tilt Neon";
+    color: black;
+    font-weight: bold;
+    background-color: #C63EC2 ;
+    opacity: 1;
+    margin: 10px;
+    margin-right: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.Edit:hover{
+    transform: scale(1.1);
+    opacity:0.7;
+}
+.Edit:active{
+    transform: scale(1);
+    opacity:1;
+}
+.Delete:hover{
+    transform: scale(1.1);
+    opacity:0.7;
+}
+.Delete:active{
+    transform: scale(1);
+    opacity:1;
+}

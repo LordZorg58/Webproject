@@ -1,0 +1,192 @@
+*{
+    font-family: sans-serif;
+    margin:0;
+    padding: 0; 
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('159.png');
+    background-size: cover;
+    background-size: 100%;
+    
+}
+.box{
+    backdrop-filter: blur(50px);    
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    position: relative;
+    width: 500px;
+    height: 550px;
+    background: #ff0000;
+    background-repeat: no-repeat; 
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    
+}
+h1{
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+}
+.input{
+    position: relative;
+    margin: 30px 0px;
+    width: 310;
+    border-bottom: 2px solid #fff;
+}
+.input label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-30px);
+    color: #fff;
+    font-size:1em ;
+    transition: .2s;
+}
+
+input :focus ~label,
+input :valid ~label{
+top: -5px;
+}
+.input input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0px 35px 0px 5px;
+    color: #fff;
+}
+.input ion-icon{
+position:absolute;
+right: 8px;
+color: #fff;
+font-size: 1.2em;
+top: 20px;
+}
+.inputP{
+    position: relative;
+    margin: 30px 0px;
+    width: 310;
+    border-bottom: 2px solid #fff;
+}
+.inputP label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-30px);
+    color: #fff;
+    font-size:1em ;
+    transition: .2s;
+}
+
+input :focus ~label,
+input :valid ~label{
+top: -5px;
+}
+.inputP input{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0px 35px 0px 5px;
+color: #fff;
+}
+.inputP ion-icon { 
+position:absolute;
+right: 8px;
+color: #fff;
+font-size: 1.2em;
+top: 20px;
+}
+#image{
+    
+    height:25px;
+    width: 25px;;
+    cursor: pointer;
+    position:absolute;
+    left:160px;
+    top:14px;
+}
+#passs{
+    display: flex;
+    flex-direction: row;
+  
+
+}
+
+/* <----------the.bits shape------> */
+
+.bits {
+    --color: #00A97F;
+    --color2: rgb(10, 25, 30);
+    padding: 0.8em 1.75em;
+    background-color: transparent;
+    border-radius: 6px;
+    border: .3px solid var(--color);
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 12px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+   }
+   
+   .bits::after, .bits::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color);
+   }
+   
+   .bits::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .bits:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .bits:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+   }
+   
+   .bits:hover {
+    color: var(--color2);
+   }
+   
+   .bits:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+   }
+   .input:not([placeholfer])+label{
+    transition:transform 0.5s ease  0.5 ease;
+
+}
+#LOGIN{
+    margin: 10px;
+}

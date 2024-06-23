@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #222;
+    z-index: 1000; /* Ensure the header is above other elements */
+}
+  body {
+    padding-top: 190px; /* Adjust this to match the header height */
+
+}
+.strap {
+    background-color: #e57aaf; /* Pink color */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    animation: moveStrap 5s infinite; 
+}
+@keyframes moveStrap {
+    0% {
+        transform: scaleX(0); 
+    }
+    50% {
+        transform: scaleX(1); 
+    }
+    100% {
+        transform: scaleX(0); 
+    }
+}
+.logo {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: whitesmoke;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Style for icons */
+.logo a {
+    position: absolute; 
+    text-align: center;
+    font-size: 23px; /* icon size */
+ }
+.logo a:nth-child(1) {
+   right: 170px; 
+   font-size: 23px;
+   color: #ffffff;
+}
+.logo a:nth-child(2) {
+   right: 130px; 
+   color: #ffffff;
+   font-size: 20px;
+}
+.logo a:nth-child(3) {
+   right: 90px;
+   color: #ffffff;
+   font-size: 20px;
+}
+.logo a:nth-child(4) {
+   right: 50px; 
+   color: #ffffff;
+   font-size: 20px;
+}
+.search-bar {
+    position: absolute;
+    border-radius: 50px;
+    top: calc(40% + 10px); /* Adjust the distance from the search icon */
+    left: 1100px;
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+    z-index: 2;
+ }
+ .search-bar input {
+    width: 200px;
+    height: 15px;
+    border-radius: 50px;
+    padding: 10px;
+ }
+ .search-bar button {
+    padding: 5px 10px;
+    border-radius: 50px;
+ }
+ .cart-panel {
+    text-align: center;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    border-radius: 40px;
+    top: calc(40% + 10px); /* Adjust the distance from the search icon */
+    left: 1000px;
+    background-color: #fff;
+    padding: 10px;
+    display: none;
+    z-index: 2;
+ }
+ .cart-panel img {
+    padding-top: 50px;
+    padding-left: 100px;
+    width: 300px;
+    height: 200px;
+    border-radius: 40px;
+    display:block;
+ }
+ .cart-panel button {
+   
+    display: inline;
+    margin-top: 40px;
+    border-radius: 40px;
+ } 
+
+
+ .navigation {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none; 
+}
+.navigation a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 0 15px;
+    margin-left: 55px;
+    transition: color 0.3s;
+}
+.navigation a:hover {
+    color: rgb(198, 198, 13);
+}
+
+.content {
+    font-size: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-gallery {
+    flex: 1; /* Take up all available horizontal space */
+    max-width: 50%; /* Limit maximum width */
+}
+
+.additional-info {
+    flex: 1; /* Take up all available horizontal space */
+    max-width: 40%; /* Limit maximum width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between elements */
+    padding: 20px;
+    background-color: white; /* Light background color */
+    
+}
+.buybtn
+{
+    font-size: larger;
+    color: #000;
+    font-weight: 600;
+    box-shadow: 0px 8px 16px 0px  #5150504e;
+
+}
+
+.card-body {
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: left;
+}
+
+.product-price {
+    background-color: black;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 9px;
+    border-radius: 10px;
+}
+
+.divider-line {
+    border: none;
+    border-top: 1px solid lightgrey;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.size-selector {
+    display: flex; /* Use flexbox for layout */
+    gap: 10px; /* Space between size options */
+    align-items: center; /* Align text vertically */
+    margin-top: 3px;
+}
+.size-selector label {
+    display: inline-flex; /* Makes label act like a button */
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: 2px solid lightgrey; /* Default border color */
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s; /* Smooth transition for hover effect */
+}
+.size-selector label:hover {
+    border-color: black; /* Change border color on hover */
+}
+.size-selector input {
+    display: none; /* Hide the radio buttons */
+}
+.size-selector input:checked + label {
+    border-color: black; /* Keep border black when selected */
+    background-color: white; /* Retain white background for visibility */
+    color: black; /* Ensure text stays readable */
+}
+.main-image img {
+    width: 550px; /* Example width for the main image */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 100px;
+}
+
+.product-details {
+    margin: 20px;
+}
+
+.wrapper {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -10px 0px 10px 0px;
+    padding: 5px;
+    background: #FFF;
+    border-radius: 20px;
+    border: 2px solid lightgrey; /* Default border color */
+}
+.wrapper span {
+    padding: 0 10px; /* Optional: Add padding to ensure spacing between items */
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.wrapper span.num {
+    font-size: 20px;
+    pointer-events: none;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(233, 204, 39);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover { 
+    background-color: black;
+    color:white;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #e2e3e5;
+    color: #264653;
+ }
+ .link {
+    color: #264653;
+    text-decoration: none;
+    font-size:15px;
+}
+ input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+ }
+ button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #264653;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+ }
